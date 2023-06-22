@@ -23,7 +23,7 @@ streamlit.write('The user entered ', fruit_choice)
 add_fruit = streamlit.text_input('What fruit would you like to add?')
 streamlit.write('Thanks for adding ', add_fruit)
 
-my_cur.execute("insert into fruit_load_list values ('from streamlit')")
+
 
 import requests
 fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_choice)
@@ -41,3 +41,4 @@ my_cur.execute("SELECT * FROM fruit_load_list")
 my_data_rows = my_cur.fetchall()
 streamlit.header("The fruit load list contains:")
 streamlit.dataframe(my_data_rows)
+my_cur.execute("insert into fruit_load_list values ('from streamlit')")
